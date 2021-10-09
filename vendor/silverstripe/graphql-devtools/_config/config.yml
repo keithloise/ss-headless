@@ -1,0 +1,37 @@
+---
+Name: graphql-devtools
+After:
+  - 'graphql-dev'
+---
+SilverStripe\GraphQLDevTools\Controller:
+  schemas:
+    - default
+  default_schema: default
+
+---
+Name: graphql4-devtool-routes
+After:
+  - 'graphql-dev'
+Only:
+  classexists: 'SilverStripe\GraphQL\Schema\Schema'
+---
+SilverStripe\GraphQL\Dev\DevelopmentAdmin:
+  registered_controllers:
+    ide:
+      controller: 'SilverStripe\GraphQLDevTools\Controller'
+      links:
+        ide: Run the GraphQL IDE
+
+---
+Name: graphql3-devtool-routes
+After:
+  - 'graphql-dev'
+Except:
+  classexists: 'SilverStripe\GraphQL\Schema\Schema'
+---
+SilverStripe\Dev\DevelopmentAdmin:
+  registered_controllers:
+    graphiql:
+      controller: 'SilverStripe\GraphQLDevTools\Controller'
+SilverStripe\GraphQLDevTools\Controller:
+  default_route: 'graphql'

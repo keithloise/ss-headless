@@ -1,0 +1,25 @@
+{
+    "require": {
+        "silverstripe/recipe-core": "^4.9",
+        "silverstripe/admin": "^1.9",
+        "silverstripe/graphql": "4.x-dev",
+        "silverstripe/asset-admin": "^1.9",
+        "silverstripe/login-forms": "~4.5.0@stable"
+    },
+    "extra": {
+        "project-files-installed": [
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "web.config"
+        ]
+    },
+    "require-dev": {
+        "silverstripe/graphql-devtools": "dev-master"
+    }
+}
